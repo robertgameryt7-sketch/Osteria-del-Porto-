@@ -1,0 +1,553 @@
+/* ==========================================================================
+   1. DESIGN TOKENS & VARIABLES GLOBALES (Osteria del Porto)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* --- Paleta Identitaria "Osteria del Porto" --- */
+  --color-primary: #0A192F;         /* Azul Océano Abisal */
+  --color-primary-light: #112240;   /* Azul Tarjeta / Superficie */
+  --color-accent: #D4AF37;          /* Dorado Champán / Elegancia */
+  --color-accent-hover: #F3E5AB;    /* Dorado Resplandor */
+  
+  /* --- Colores de Plataformas Sociales --- */
+  --whatsapp-platform: #25D366;
+  --whatsapp-hover: #1EBE5D;
+  --facebook-platform: #1877F2;
+  --instagram-platform: #E4405F;
+
+   /* --- Colores para identificar diferentes tipos de categorias --- */ 
+    --category-product-main-dishes: #D4AF37;
+    --category-product--desserts: #E0A96D;
+    --category-product--drinks-and-cocktails:#48CAE4;
+    --category-product---snacks: #E76F51;
+  /* --- Neutrales & Superficies --- */
+  --color-bg: #070F1E;              /* Fondo General Oscuro Noche */
+  --color-surface: #0A192F;         /* Superficie de Tarjetas */
+  --color-surface-card: #112240;    /* Fondo Tarjeta Interna */
+  --color-text-main: #F8FAFC;       /* Texto Principal (Blanco Perla) */
+  --color-text-muted: #94A3B8;      /* Texto Secundario (Gris Azulado) */
+  --color-border: rgba(212, 175, 55, 0.25); /* Borde Dorado Sutil */
+
+  /* --- Tipografías Fluidas --- */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* --- Tamanos Fluídos con clamp() --- */
+  --font-size-h1: clamp(1.6rem, 3.5vw, 2.8rem);
+  --font-size-h2: clamp(1.8rem, 4vw, 3.2rem);
+  --font-size-h3: clamp(1.3rem, 2.5vw, 2rem);
+  --font-size-body: clamp(0.95rem, 1vw + 0.5rem, 1.1rem);
+  --font-size-sm: clamp(0.8rem, 0.8vw + 0.4rem, 0.9rem);
+
+  /* --- Bordes Redondeados --- */
+  --border-radius-sm: 0.5rem;   /* 8px */
+  --border-radius-md: 0.85rem;  /* 13.6px */
+  --border-radius-lg: 1.25rem;  /* 20px */
+  --border-radius-full: 9999px; /* Píldora / Círculo */
+
+  /* --- Sombras de Elevación Profesionales --- */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow-gold: 0 0 25px rgba(212, 175, 55, 0.25);
+  --shadow-glow-wsp: 0 0 20px rgba(37, 211, 102, 0.4);
+
+  /* --- Transiciones --- */
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- Layout Global Fluido --- */
+  --max-width: 1200px;
+  --gutter: clamp(1rem, 3vw, 2rem);
+}
+
+/* ==========================================================================
+   2. RESET ACCESIBLE Y BASE
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  font-size: 100%;
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Manejo Accesible de Enfoque Teclado (WCAG) */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: min(100% - (var(--gutter) * 2), var(--max-width));
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   3. COMPONENTE: HEADER STICKY & NAVEGACIÓN
+   ========================================================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header__container {
+  display: flex;
+  flex-wrap: wrap; /* Auto-adaptable en móviles */
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+  gap: 1rem;
+}
+
+.header__brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+
+.header__information {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+.nav__link {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-main);
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: var(--transition-normal);
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__link--facebook { color: var(--facebook-platform); }
+.nav__link--facebook::after { background-color: var(--facebook-platform); }
+
+.nav__link--instagram { color: var(--instagram-platform); }
+.nav__link--instagram::after { background-color: var(--instagram-platform); }
+
+.nav__link--whatsapp { color: var(--whatsapp-platform); }
+.nav__link--whatsapp::after { background-color: var(--whatsapp-platform); }
+
+/* ==========================================================================
+   4. SECCIÓN HERO
+   ========================================================================== */
+
+.hero {
+  padding-block: clamp(2rem, 5vw, 5rem);
+}
+
+.hero__container {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.hero__important {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 800px;
+}
+
+.hero__badge {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--color-accent);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-full);
+  padding: 0.4rem 1.2rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  line-height: 1.15;
+  color: var(--color-text-main);
+}
+
+.hero__information {
+  font-size: var(--font-size-body);
+  color: var(--color-text-muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 700;
+  font-size: var(--font-size-body);
+  transition: var(--transition-normal);
+}
+
+.link--hero-products {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.link--hero-products:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.link--hero-whatsapp {
+  background-color: var(--whatsapp-platform);
+  color: #ffffff;
+}
+
+.link--hero-whatsapp:hover {
+  background-color: var(--whatsapp-hover);
+  box-shadow: var(--shadow-glow-wsp);
+  transform: translateY(-2px);
+}
+
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.stat__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__demonstration {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.card__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   5. SECCIÓN NOSOTROS
+   ========================================================================== */
+
+.about {
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+
+.about__container {
+  display: flex;
+  flex-wrap: wrap; /* Sustituye media-queries para layout responsivo */
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+.about__content, .about__demonstration {
+  flex: 1 1 320px; /* Crece y encoge a partir de 320px */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.about__badge {
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.about__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  line-height: 1.2;
+}
+
+.about__description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body);
+}
+
+.demonstration__img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.link--about-whatsapp {
+  background-color: var(--whatsapp-platform);
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+}
+
+/* ==========================================================================
+   6. SECCIÓN MENÚ / PRODUCTOS (CATEGORÍAS EN GRID)
+   ========================================================================== */
+
+.products {
+  padding-block: clamp(2.5rem, 5vw, 5rem);
+}
+
+.products__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.products__badge {
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.title__products {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  color: var(--color-text-main);
+}
+
+.grid__products {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.category__products__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.products__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+/* CSS Grid Fluido Autónomo */
+.products__grid__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1.75rem;
+  align-items: stretch;  
+}
+
+.category__products__container--main-dishes {
+    border-left: 2px solid var(--category-product-main-dishes);
+    padding-left: 1rem;
+}
+
+.category__products__container--desserts {
+    border-left: 2px solid var(--category-product--desserts);    
+    padding-left: 1rem;
+}
+
+.category__products__container--drinks-and-cocktails {
+    border-left: 2px solid var(--category-product--drinks-and-cocktails);
+    padding-left: 1rem;
+}
+
+.category__products__container--snacks {
+    border-left: 2px solid var(--category-product---snacks);
+    padding-left: 1rem;
+}
+
+
+/* Tarjeta del Producto (Product Card) */
+.product__card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column; /* Clave para el alineamiento del botón */
+  gap: 1rem;
+  transition: var(--transition-normal);
+}
+
+.product__card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.product__badge {
+  align-self: flex-start;
+  background-color: rgba(212, 175, 55, 0.15);
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+}
+
+.product__title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-text-main);
+}
+
+.product__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+}
+
+.product__description {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.product__cost {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.link--product {
+  margin-top: auto; /* TRUCO SENIOR: Empuja el botón al fondo siempre */
+  background-color: var(--whatsapp-platform);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.link--product:hover {
+  background-color: var(--whatsapp-hover);
+  box-shadow: var(--shadow-glow-wsp);
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+
+.footer {
+  background-color: var(--color-primary);
+  border-top: 1px solid var(--color-border);
+  padding-block: 2.5rem;
+  margin-top: 3rem;
+}
+
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer__brand {
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer__information {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

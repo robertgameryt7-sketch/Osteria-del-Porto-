@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osteria del Porto — Gastronomía Italiana Marina</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER STICKY CON REDES Y NAVEGACIÓN -->
+  <header class="header">
+    <div class="header__container container">
+      <div class="header__brand">
+        <h1 class="header__title">Osteria del Porto</h1>
+        <span class="header__information">Cucina Marina & Tradizione</span>
+      </div>
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#Inicio" class="nav__link">Inicio</a>
+          </li>
+          <li class="nav__item">
+            <a href="#Nosotros" class="nav__link">Nosotros</a>
+          </li>
+          <li class="nav__item">
+            <a href="#Menu" class="nav__link">Carta / Menú</a>
+          </li>
+          <li class="nav__item">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="nav__link nav__link--facebook">Facebook</a>
+          </li>
+          <li class="nav__item">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="nav__link nav__link--instagram">Instagram</a>
+          </li>
+          <li class="nav__item">
+            <a href="https://wa.me/51999004258?text=Hola%20Osteria%20del%20Porto,%20deseo%20consultar%20por%20una%20reserva" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="nav__link nav__link--whatsapp">WhatsApp</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    
+    <!-- SECCIÓN 1: HERO -->
+    <section class="hero" id="Inicio">
+      <div class="hero__container container">
+        <div class="hero__important">
+          <span class="hero__badge">Experiencia Gourmet ⭐</span>
+          <h2 class="hero__title">El Auténtico Sabor del Puerto Italiano</h2>
+          <p class="hero__information">
+            Más de 20 años deleitando paladares con la más selecta pesca del día, pastas artesanales hechas en casa y la calidez de la cocina tradicional marina.
+          </p>
+        </div>
+        
+        <div class="hero__actions">
+          <a href="#Menu" class="link link--hero-products">Ver la Carta</a>
+          <a href="https://wa.me/51999004258?text=Hola,%20deseo%20hacer%20un%20pedido%20directo%20desde%20la%20web" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="link link--hero-whatsapp">Pedir por WhatsApp</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat__card">
+            <span class="card__demonstration">100%</span>
+            <span class="card__label">Frescura Marina</span>
+          </div>
+          <div class="stat__card">
+            <span class="card__demonstration">20+</span>
+            <span class="card__label">Años de Tradición</span>
+          </div>
+          <div class="stat__card">
+            <span class="card__demonstration">4.9★</span>
+            <span class="card__label">Valoración Gourmet</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: NOSOTROS -->
+    <section class="about" id="Nosotros">
+      <div class="about__container container">
+        <div class="about__content">
+          <span class="about__badge">Nuestra Historia</span>
+          <h2 class="about__title">Tradición, Pasión y Mar</h2>
+          <p class="about__description">
+            En <strong>Osteria del Porto</strong> combinamos recetas ancestrales de la costa italiana con insumos frescos de nuestro litoral. Cada plato es preparado al instante por nuestros maestros cocineros para garantizar una vivencia culinaria inolvidable.
+          </p>
+        </div>
+        <div class="about__demonstration">
+          <div class="demonstration__information">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" 
+                 alt="Ambiente elegante del restaurante Osteria del Porto" 
+                 class="demonstration__img" 
+                 loading="lazy">
+          </div>
+          <div class="about__actions">
+            <a href="https://wa.me/51999004258?text=Hola,%20quisiera%20reservar%20una%20mesa%20para%20hoy" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="link link--about-whatsapp">Reservar Mesa por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: MENÚ (Dividido en Contenedores por Categorías) -->
+    <section class="products" id="Menu">
+      <div class="products__container container">
+        
+        <header class="products__header">
+          <span class="products__badge">Nuestra Carta</span>
+          <h2 class="title__products">Especialidades de Osteria del Porto</h2>
+        </header>
+
+        <div class="grid__products">
+          
+          <!-- CATEGORÍA 1: PLATOS DE FONDO -->
+          <div class="category__products__container category__products__container--main-dishes">
+            <h3 class="products__title">Platos Principales & Pastas</h3>
+            <div class="products__grid__container">
+              
+              <article class="product__card">
+                <span class="product__badge">Plato Insignia</span>
+                <h4 class="product__title">Risotto al Nero di Seppia</h4>
+                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Risotto al Nero di Seppia" class="product__img" loading="lazy">
+                <p class="product__description">Arroz Carnaroli en tinta de calamar fresco y salteado de mariscos al vino blanco.</p>
+                <span class="product__cost">Desde: S/ 68.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20el%20Risotto%20al%20Nero%20di%20Seppia" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+              <article class="product__card">
+                <span class="product__badge">Tradicional</span>
+                <h4 class="product__title">Spaghetti alle Vongole</h4>
+                <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80" alt="Spaghetti alle Vongole" class="product__img" loading="lazy">
+                <p class="product__description">Pasta artesanal, almejas de puerto, ajo dorado, guindilla y perejil fresco.</p>
+                <span class="product__cost">Desde: S/ 58.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20el%20Spaghetti%20alle%20Vongole" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+              <article class="product__card">
+                <span class="product__badge">Recomendación</span>
+                <h4 class="product__title">Linguine al Granchio</h4>
+                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80" alt="Linguine al Granchio" class="product__img" loading="lazy">
+                <p class="product__description">Pasta fina con pulpa de cangrejo real, crema ligera de pomodoro y albahaca serrana.</p>
+                <span class="product__cost">Desde: S/ 62.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20el%20Linguine%20al%20Granchio" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- CATEGORÍA 2: POSTRES -->
+          <div class="category__products__container category__products__container--desserts">
+            <h3 class="products__title">Postres Artesanales</h3>
+            <div class="products__grid__container">
+              
+              <article class="product__card">
+                <span class="product__badge">Dulce Clásico</span>
+                <h4 class="product__title">Tiramisú Tradizionale</h4>
+                <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80" alt="Tiramisú Tradicional" class="product__img" loading="lazy">
+                <p class="product__description">Bizcochuelos savoiardi embebidos en espresso, crema de mascarpone y cacao puro.</p>
+                <span class="product__cost">Desde: S/ 28.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20el%20Tiramisú%20Tradizionale" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+              <article class="product__card">
+                <span class="product__badge">Cítrico</span>
+                <h4 class="product__title">Panna Cotta al Limoncello</h4>
+                <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80" alt="Panna Cotta" class="product__img" loading="lazy">
+                <p class="product__description">Crema cocida suave infundida en vainilla con reducción artesanal de limoncello siciliano.</p>
+                <span class="product__cost">Desde: S/ 26.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20la%20Panna%20Cotta%20al%20Limoncello" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+              <article class="product__card">
+                <span class="product__badge">Especial</span>
+                <h4 class="product__title">Cannoli Siciliani</h4>
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Cannoli Siciliani" class="product__img" loading="lazy">
+                <p class="product__description">Masa crocante frita rellena de queso ricotta dulce, chispas de chocolate y pistachos.</p>
+                <span class="product__cost">Desde: S/ 24.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20los%20Cannoli%20Siciliani" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- CATEGORÍA 3: BEBIDAS & CÓCTELES -->
+          <div class="category__products__container category__products__container--drinks-and-cocktails">
+            <h3 class="products__title">Bebidas & Coctelería</h3>
+            <div class="products__grid__container">
+              
+              <article class="product__card">
+                <span class="product__badge">Cóctel Italia</span>
+                <h4 class="product__title">Aperol Spritz Porto</h4>
+                <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=600&q=80" alt="Aperol Spritz" class="product__img" loading="lazy">
+                <p class="product__description">Prosecco italiano, Aperol, agua con gas y rodaja de naranja fresca.</p>
+                <span class="product__cost">Desde: S/ 32.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20un%20Aperol%20Spritz" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+              <article class="product__card">
+                <span class="product__badge">Refrescante</span>
+                <h4 class="product__title">Limonada de Albañil con Menta</h4>
+                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Limonada Italiana" class="product__img" loading="lazy">
+                <p class="product__description">Zumo concentrado de limones de estación, hojas de menta fresca y jarabe de goma.</p>
+                <span class="product__cost">Desde: S/ 18.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20una%20Limonada%20con%20Menta" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+              <article class="product__card">
+                <span class="product__badge">Vino Tinto</span>
+                <h4 class="product__title">Chianti Classico DOCG (Copa)</h4>
+                <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" alt="Copa de Vino Chianti" class="product__img" loading="lazy">
+                <p class="product__description">Vino tinto toscano tradicional, de cuerpo medio con notas a cereza y especias.</p>
+                <span class="product__cost">Desde: S/ 38.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20una%20copa%20de%20Chianti%20Classico" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- CATEGORÍA 4: BOCADITOS / ANTIPASTI -->
+          <div class="category__products__container category__products__container--snacks">
+            <h3 class="products__title">Bocaditos & Antipasti</h3>
+            <div class="products__grid__container">
+              
+              <article class="product__card">
+                <span class="product__badge">Para Compartir</span>
+                <h4 class="product__title">Bruschetta di Mare</h4>
+                <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=600&q=80" alt="Bruschetta di Mare" class="product__img" loading="lazy">
+                <p class="product__description">Pan de masa madre tostado, tomates cherry, pulpo confitado y aceite de oliva virgen.</p>
+                <span class="product__cost">Desde: S/ 36.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20la%20Bruschetta%20di%20Mare" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+              <article class="product__card">
+                <span class="product__badge">Marino</span>
+                <h4 class="product__title">Fritto Misto di Molo</h4>
+                <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80" alt="Fritto Misto" class="product__img" loading="lazy">
+                <p class="product__description">Selección de calamares y langostinos crocantes acompañados de salsa tártara de la casa.</p>
+                <span class="product__cost">Desde: S/ 42.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20el%20Fritto%20Misto" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+              <article class="product__card">
+                <span class="product__badge">Gourmet</span>
+                <h4 class="product__title">Carpaccio di Polpo</h4>
+                <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=600&q=80" alt="Carpaccio de Pulpo" class="product__img" loading="lazy">
+                <p class="product__description">Láminas finas de pulpo marinadas en vinagreta de alcaparras, albahaca y sal marina.</p>
+                <span class="product__cost">Desde: S/ 45.00</span>
+                <a href="https://wa.me/51999004258?text=Hola,%20deseo%20pedir%20el%20Carpaccio%20di%20Polpo" 
+                   target="_blank" rel="noopener noreferrer" class="link link--product">Pedir por WhatsApp</a>
+              </article>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container container">
+      <div class="footer__info">
+        <h3 class="footer__brand">Osteria del Porto</h3>
+        <p class="footer__information">
+          <strong>Ubicación:</strong> Av. Miguel Grau 450, Malecón del Puerto
+        </p>
+      </div>
+      <div class="footer__hours">
+        <p class="footer__information">
+          <strong>Horarios:</strong> Lun, Mié a Sáb: 12:00 pm - 11:00 pm | Dom: 12:00 pm - 7:00 pm (Mar: Cerrado)
+        </p>
+        <p class="footer__information">
+          <strong>Reservas Directas:</strong> +51 999 004 258
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
